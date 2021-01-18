@@ -190,4 +190,59 @@ YAML is used mostly to store configuration values
 
 #### More on JSON
 
+#### More on JSON
 
+[JSON](https://json.org/)
+
+json makes data human readable by converting complex data into a readable format
+
+sample:
+
+    {
+  "name": "Sabrina Green",
+  "username": "sgreen",
+  "uid": 1002,
+  "phone": {
+    "office": "802-867-5309",
+    "cell": "802-867-5310"
+     }
+    }
+
+JSON arrays
+
+    [
+  "apple",
+  "banana",
+  12345,
+  67890,
+  {
+    "name": "Sabrina Green",
+    "username": "sgreen",
+    "phone": {
+      "office": "802-867-5309",
+      "cell": "802-867-5310"
+    },
+    "department": "IT Infrastructure",
+    "role": "Systems Administrator"
+     }
+    ]
+
+you have to import Json 
+
+    import json
+
+you can use dump to serialize the data
+
+
+### Load vs dump
+
+The **load()** method does the inverse of the __dump()__ method. It deserializes JSON from a file into basic Python objects. The loads() method also deserializes JSON into basic Python objects, but parses a string instead of a file.
+
+    >>> import json
+    >>> with open('people.json', 'r') as people_json:
+    ...     people = json.load(people_json)
+    ... 
+    >>> print(people)
+    [{'name': 'Sabrina Green', 'username': 'sgreen', 'phone': {'office': '802-867-5309', 'cell': '802-867-5310'}, 'department': 'IT Infrastructure', 'role': 'Systems           Administrator'}, {'name': 'Eli Jones', 'username': 'ejones', 'phone': {'office': '684-348-1127'}, 'department': 'IT Infrastructure', 'role': 'IT Specialist'}, {'name':           'Melody Daniels', 'username': 'mdaniels', 'phone': {'cell': '846-687-7436'}, 'department': 'User Experience Research', 'role': 'Programmer'}, {'name': 'Charlie Rivera',      'username': 'riverac', 'phone': {'office': '698-746-3357'}, 'department': 'Development', 'role': 'Web Developer'}]
+
+[Converting Python objects into into Json](https://docs.python.org/3/library/json.html#py-to-json-table)
