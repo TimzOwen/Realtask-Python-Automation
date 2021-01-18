@@ -53,4 +53,29 @@ For py library like PIL its documented using docstring (Doc that lives within th
 [Tutorials for PIL](https://pillow.readthedocs.io/en/stable/handbook/tutorial.html)
 
 
+===========================================================================================latest commit
+
+#### using PIL with images manipulation
+
+Resize image :
+
+    from PIL import Image   (imports the library)
+    im = Image("example.jpg") (opens the image)
+    new_im = im.resize((640,480)) (Resize the image to a different pixel)
+    new_im.save("example_resized.jpg") (save image to bew resolution)
+
+[More Practice with PIL , check the Docs](https://pillow.readthedocs.io/en/stable/handbook/tutorial.html)
+
+
+### web Application Services
+
+This are applications  that users interact with over HTTP
+
+user sends a quest to server and receives a request of information rendered in HTML web browser
+
+Web apps that have APIs are called **Web Services**
+
+Sends __API CALLS__ to a web services  and the part listening to the call is called **API Endpoint**
+
+
 
