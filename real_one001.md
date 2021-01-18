@@ -243,6 +243,64 @@ The **load()** method does the inverse of the __dump()__ method. It deserializes
     ...     people = json.load(people_json)
     ... 
     >>> print(people)
-    [{'name': 'Sabrina Green', 'username': 'sgreen', 'phone': {'office': '802-867-5309', 'cell': '802-867-5310'}, 'department': 'IT Infrastructure', 'role': 'Systems           Administrator'}, {'name': 'Eli Jones', 'username': 'ejones', 'phone': {'office': '684-348-1127'}, 'department': 'IT Infrastructure', 'role': 'IT Specialist'}, {'name':           'Melody Daniels', 'username': 'mdaniels', 'phone': {'cell': '846-687-7436'}, 'department': 'User Experience Research', 'role': 'Programmer'}, {'name': 'Charlie Rivera',      'username': 'riverac', 'phone': {'office': '698-746-3357'}, 'department': 'Development', 'role': 'Web Developer'}]
+    [{'name': 'Sabrina Green', 'username': 'sgreen', 'phone': {'office': '802-867-5309', 'cell': '802-867-5310'}, 'department': 'IT Infrastructure', 'role': 'Systems             Administrator'}, {'name': 'Eli Jones', 'username': 'ejones', 'phone': {'office': '684-348-1127'}, 'department': 'IT Infrastructure', 'role': 'IT Specialist'}, {'name':           'Melody Daniels', 'username': 'mdaniels', 'phone': {'cell': '846-687-7436'}, 'department': 'User Experience Research', 'role': 'Programmer'}, {'name': 'Charlie           Rivera',      'username': 'riverac', 'phone': {'office': '698-746-3357'}, 'department': 'Development', 'role': 'Web Developer'}]
 
 [Converting Python objects into into Json](https://docs.python.org/3/library/json.html#py-to-json-table)
+
+
+### Python Requests Library
+
+Sending HTTP requests over the World Wide Web (WWW) and formating the data using Python
+
+[Python Request Library for sending and Receiving HTTP](https://requests.readthedocs.io/)
+
+Example:
+
+    >>> import requests
+    >>> response = requests.get('https://www.google.com')
+
+Thats it! That was a basic request for a web page! We used the Requests library to make a **HTTP GET**
+request for a specific __URL, or Uniform Resource Locator__. The URL tells the Requests library the name 
+of the resource **(www.google.com)** and what 
+protocol to use to get the resource (https://). The result we get is an
+object of type [requests.Response](https://requests.readthedocs.io/en/master/api/#requests.Response)
+
+Get the first 300 response
+
+    >>> print(response.text[:300])
+    <!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="de"><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta               content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"><title>Google</title><script nonce="dZfbIAn803LDGXS9
+
+[HTML checkout response](https://html.spec.whatwg.org/multipage/)
+
+Reading raw web message
+
+    >>> response = requests.get('https://www.google.com', stream=True)
+    >>> print(response.raw.read()[:100])
+
+compressing with [gzip](https://www.gzip.org/)
+
+### Useful Python Operations Requests
+
+[Check if response was successful with Request.ok](https://requests.readthedocs.io/en/master/api/#requests.Response.ok)
+
+    >>>reponse.ok
+    True
+
+[HTTP Requests Codes](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
+
+[Response status codes](https://requests.readthedocs.io/en/master/api/#requests.Response.ok)
+
+    >>> reponse.status_code
+    200
+
+Always checking reponse code to make sure its working
+
+    response = requests.get(url)
+    if not response.ok:
+    raise Exception("GET failed with status code {}".format(response.status_code))
+
+[Raising HTTP Error exception on failure alone](https://requests.readthedocs.io/en/master/api/#requests.Response.raise_for_status)
+
+    response = requests.get(url)    
+    response.raise_for_status()
+
