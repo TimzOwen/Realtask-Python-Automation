@@ -79,3 +79,76 @@ Sends __API CALLS__ to a web services  and the part listening to the call is cal
 
 
 
+### Data serialization
+
+Process of writing data into understandable formarts like **CSV** 
+
+Data serialization is the process of taking an in-memory data structure, like a Python object, and turning it 
+
+into something that can be stored on disk or transmitted across a network
+
+Turning the serialized object back into an in-memory object is called __deserialization__
+
+Example of CSV data
+
+    name,username,phone,department,role
+    Sabrina Green,sgreen,802-867-5309,IT Infrastructure,System Administrator
+    Eli Jones,ejones,684-3481127,IT Infrastructure,IT specialist
+
+Data in dictionary state
+
+    people = [
+    {
+        "name": "Sabrina Green",
+        "username": "sgreen",
+        "phone": "802-867-5309",
+        "department": "IT Infrastructure",
+        "role": "Systems Administrator"
+    },
+    {
+        "name": "Eli Jones",
+        "username": "ejones",
+        "phone": "684-348-1127",
+        "department": "IT Infrastructure",
+        "role": "IT Specialist"
+    },
+    ]
+
+Add more data in same formart (added phone number )
+
+    people = [
+    {
+        "name": "Sabrina Green",
+        "username": "sgreen",
+        "phone": {
+            "office": "802-867-5309",
+            "cell": "802-867-5310"
+        },
+        "department": "IT Infrastructure",
+        "role": "Systems Administrator"
+    },
+    {
+        "name": "Eli Jones",
+        "username": "ejones",
+        "phone": {
+            "office": "684-348-1127"
+        },
+        "department": "IT Infrastructure",
+        "role": "IT Specialist"
+    },
+    ]
+
+### Json and Serialization
+
+[Interact with JSON (JavaScript Object Notation)](https://json.org/)
+
+Open and dump data:
+
+    import json
+
+    with open('people.json', 'w') as people_json:
+    json.dump(people, people_json, indent=2)
+
+
+### Yet Another Makeup Language
+
