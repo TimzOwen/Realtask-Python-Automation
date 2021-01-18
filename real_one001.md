@@ -152,3 +152,42 @@ Open and dump data:
 
 ### Yet Another Makeup Language
 
+
+[Read on the YAML](https://yaml.org/)
+
+format:
+
+    import yaml
+
+    with open('people.yaml', 'w') as people_yaml:
+    yaml.safe_dump(people, people_yaml)
+
+Output of generated code
+
+    - department: IT Infrastructure
+    name: Sabrina Green
+    phone:
+        cell: 802-867-5310
+        office: 802-867-5309
+    role: Systems Administrator
+    username: sgreen
+-   department: IT Infrastructure
+    name: Eli Jones
+    phone:
+        office: 684-348-1127
+    role: IT Specialist
+    username: ejones
+
+YAML is used mostly to store configuration values
+
+#### Other tools
+
+[Python Pickle](https://docs.python.org/3/library/pickle.html)
+
+[Protocol Buffers](https://developers.google.com/protocol-buffers)
+
+[Extensible makeup Language XML](https://www.w3.org/XML/)
+
+#### More on JSON
+
+
