@@ -41,3 +41,40 @@ Using JSON to send and receive data over web
 
 [Learn more Request Quickstart](https://requests.readthedocs.io/en/master/user/quickstart/)
 
+
+
+## Django
+
+This is a **full-stack web framework** written in python
+
+[What is Django](https://djangoproject.com/)
+
+Django handles:
+
+    writing your app code quickly
+    Storing and Retrieving data
+    receiving web requests
+    reposnding to web requests
+
+Basic componets of web frameworks
+
+    application code: ---> Contains all your app logic
+    Data Storgae -->configure data you want to store and how
+    The web server -->state which pages are being served and the logic behind it
+
+Django uses __Urlresolver__ that interprets URL requests and matches them against a list of defined patterns
+If a URL matches a pattern, the request is passed to the associated function, called a __view__. Which servers different requests for you.
+
+Django makes it easy to interact with data stored in a database by using an object-relational mapper, or **ORM**. This tool provides an easy mapping between data models defined as Python classes and an underlying database that stores the data in question
+
+Django has __endpoint__ that can be used to add new customer reviews to the database. This endpoint is configured to receive data in JSON format, sent through an HTTP POST request. The data transmitted will then be stored in the database and added to the list of all reviews
+
+### Other web based framework includes:
+
+[Flask Framework](https://www.fullstackpython.com/flask.html)
+
+[Bottle Framework](https://bottlepy.org/docs/dev/)
+
+[CherryPy framwork](https://cherrypy.org/)
+
+[cubic web Framework](https://www.cubicweb.org/)
